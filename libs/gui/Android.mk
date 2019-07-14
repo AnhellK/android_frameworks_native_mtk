@@ -54,6 +54,7 @@ LOCAL_SRC_FILES := \
 	DisplayEventReceiver.cpp \
 	GLConsumer.cpp \
 	GraphicBufferAlloc.cpp \
+	GraphicsEnv.cpp \
 	GuiConfig.cpp \
 	IDisplayEventConnection.cpp \
 	IGraphicBufferAlloc.cpp \
@@ -73,11 +74,6 @@ LOCAL_SRC_FILES := \
 	SurfaceControl.cpp \
 	SurfaceComposerClient.cpp \
 	SyncFeatures.cpp \
-
-ifndef MTK_HARDWARE
-LOCAL_SRC_FILES += \
-	GraphicsEnv.cpp
-endif
 
 LOCAL_SHARED_LIBRARIES := \
  	libnativeloader \

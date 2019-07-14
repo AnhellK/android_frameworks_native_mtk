@@ -1289,7 +1289,7 @@ status_t Parcel::write(const FlattenableHelperInterface& val)
     if (err) return err;
 
     // payload
-   void* const buf = this->writeInplace(len);
+    void* const buf = this->writeInplace(len);
     if (buf == NULL)
         return BAD_VALUE;
 
@@ -1424,7 +1424,7 @@ data_unsorted:
     mObjectsSorted = true;
     goto data_sorted;
 }
-    
+
 status_t Parcel::read(void* outData, size_t len) const
 {
     if (len > INT32_MAX) {
@@ -1485,7 +1485,7 @@ status_t Parcel::readAligned(T *pArg) const {
     COMPILE_TIME_ASSERT_FUNCTION_SCOPE(PAD_SIZE_UNSAFE(sizeof(T)) == sizeof(T));
 
     if ((mDataPos+sizeof(T)) <= mDataSize) {
-       if (mObjectsSize > 0) {
+        if (mObjectsSize > 0) {
             status_t err = validateReadData(mDataPos + sizeof(T));
             if(err != NO_ERROR) {
                 // Still increment the data position by the expected length
@@ -2577,7 +2577,7 @@ status_t Parcel::continueWrite(size_t desired)
             mObjectsSize = objectsSize;
             mNextObjectHint = 0;
             mObjectsSorted = false;
-         }
+        }
 
         // We own the data, so we can just do a realloc().
         if (desired > mDataCapacity) {

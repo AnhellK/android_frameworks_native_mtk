@@ -96,6 +96,7 @@ size_t InputMessage::size() const {
     }
     return sizeof(Header);
 }
+
 /**
  * There could be non-zero bytes in-between InputMessage fields. Force-initialize the entire
  * memory to zero, then only copy the valid bytes on a per-field basis.
@@ -195,7 +196,6 @@ void InputMessage::getSanitizedCopy(InputMessage* msg) const {
 
 // --- InputChannel ---
 
-    
 InputChannel::InputChannel(const String8& name, int fd) :
         mName(name), mFd(fd) {
 #if DEBUG_CHANNEL_LIFECYCLE
