@@ -112,7 +112,7 @@ private:
 
     // Buffer descriptor lifecycle functions
 
-    class Descriptor;
+ //   class Descriptor;
 
     gralloc1_error_t createDescriptor(
             gralloc1_buffer_descriptor_t* outDescriptor);
@@ -428,10 +428,10 @@ private:
         if (!outData) {
             const auto producerCpuUsage = GRALLOC1_PRODUCER_USAGE_CPU_READ |
                     GRALLOC1_PRODUCER_USAGE_CPU_WRITE;
-            if (producerUsage & producerCpuUsage != 0) {
+            if (producerUsage & (producerCpuUsage != 0)) {
                 return static_cast<int32_t>(GRALLOC1_ERROR_BAD_VALUE);
             }
-            if (consumerUsage & GRALLOC1_CONSUMER_USAGE_CPU_READ != 0) {
+            if (consumerUsage & (GRALLOC1_CONSUMER_USAGE_CPU_READ != 0)) {
                 return static_cast<int32_t>(GRALLOC1_ERROR_BAD_VALUE);
             }
         }
